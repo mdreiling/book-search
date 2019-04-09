@@ -1,13 +1,11 @@
 // Setting requires
-const axios = require("axios");
 const router = require("express").Router();
 const booksController = require("../../controllers/booksControllers");
+// const exAPI = require("../../client/src/utils/externalAPI");
 
 // Setting routes from / | Fetch books from Google Books API->db, get books from db->client, post favorites from client->db
 router
     .route("/")
-    // axios  
-    //     .get("")
     .get(booksController.findAll)
     .post(booksController.addFavorite);
 
